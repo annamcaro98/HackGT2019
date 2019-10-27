@@ -77,7 +77,7 @@ def matchmaker():
             # clsrm's free
             if stud not in matched[clsrm]:
                 matched[clsrm].append(stud)
-                print("There's a spot! Now matched: %s and %s" % (stud.upper(), clsrm.upper()))
+                print("There's a spot! Now matched: %s and %s\n" % (stud.upper(), clsrm.upper()))
         else:
             # The stud proposes to an full clsrm!
             clsrmslist = clsrmprefers2[clsrm]
@@ -86,7 +86,7 @@ def matchmaker():
                     # clsrm prefers new stud
                     if stud not in matched[clsrm]:
                         matched[clsrm][i] = stud
-                        print("  %s dumped %s (class's #%s) for %s (class's #%s)" % (clsrm.upper(), matchedAlready, (clsrmprefers[clsrm].index(matchedAlready)+1), stud.upper(), (clsrmprefers[clsrm].index(stud)+1)))
+                        print("  %s dumped %s (class's #%s) for %s (class's #%s)\n" % (clsrm.upper(), matchedAlready, (clsrmprefers[clsrm].index(matchedAlready)+1), stud.upper(), (clsrmprefers[clsrm].index(stud)+1)))
                         if studprefers2[matchedAlready]:
                             # Ex has more clsrms to try
                             studsfree.append(matchedAlready)
@@ -94,7 +94,7 @@ def matchmaker():
                             studslost.append(matchedAlready)
                 else:
                     # clsrm still prefers old match
-                    print("  %s would rather stay with %s (their #%s) over %s (their #%s)" % (clsrm, matchedAlready, (clsrmprefers[clsrm].index(matchedAlready)+1), stud, (clsrmprefers[clsrm].index(stud)+1)))
+                    print("  %s would rather stay with %s (their #%s) over %s (their #%s)\n" % (clsrm, matchedAlready, (clsrmprefers[clsrm].index(matchedAlready)+1), stud, (clsrmprefers[clsrm].index(stud)+1)))
                     if studslist:
                         # Look again
                         studsfree.append(stud)
@@ -148,9 +148,10 @@ ultimate_match = {}
 for i in range(4):
     print('\nPlay-by-play:')
     (matched, studslost) = matchmaker()
-    print('\nCouples:')
-    print('  ' + ',\n  '.join('%s is matched to %s' % couple
-                              for couple in sorted(matched.items())))
+#    print('\nCouples:')
+#    print('  ' + ',\n  '.join('%s is matched to %s' % couple
+#                              for couple in sorted(matched.items())))
+    print("\n Check Source folder for 'output.txt' containing full class listings!")
     for key,values in matched.items():
         if ultimate_match.get(key, False):
             ultimate_match[key] += values

@@ -42,8 +42,6 @@ for i in range(1,num_hospitals+1):
         for k in range(1, num_patients+1):
             if patient_problems[k] == j:
                 hospital_preferences[i] += [k,]
-print(patient_preferences)
-print(hospital_preferences)
 import copy
 from collections import defaultdict
 patients = sorted(patient_preferences.keys())
@@ -124,6 +122,7 @@ def check(matched):
                     #      "their present match: %s and %s, respectively"
                     #      % (hospitalName, patient, patientName, patientshospital))
                     return False
+                
             for hospital in helikesbetter:
                 hospitalspatients = matched[hospital]
                 hospitallikes = hospital_preferences[hospital]
@@ -134,10 +133,9 @@ def check(matched):
                         #      % (patientName, hospital, hospitalName, hospitalspatient))
                         return False
     return True
-print('\nPlay-by-play:')
 (matched, patientslost) = matchmaker()
 print('\nCouples:')
-print('  ' + ',\n  '.join('%s is matched to %s' % couple
+print('  ' + ',\n  '.join('Hospital %s is matched to Patient Numbers: %s' % couple
                           for couple in sorted(matched.items())))
 print
 print('Match stability check PASSED'
