@@ -1,0 +1,9 @@
+[numhospitals - int]
+[numpatients - int]
+[medical emergency for each pacient - char, comma separated] (e.g: b,h,k,b,k,l,h .. until patient[x])
+[specialties of hospital - descending order - char, comma separated] (e.g: bhlk,lhbk,kbhl, .. until hospital[n])
+[comma separated matrix 
+ of distances from each 
+ hospital to each patient
+ (hospital on x axis)]
+
