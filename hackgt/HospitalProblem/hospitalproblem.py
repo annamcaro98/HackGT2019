@@ -13,7 +13,7 @@ hospitalSlots = dict()
 
 
 for i in range(1, num_hospitals+1):
-    hospitalSlots[i] = 10
+    hospitalSlots[i] = 1
     
 for i in range(1, num_patients + 1):
     patient_problems[i] = data[2].split(",")[i-1]
